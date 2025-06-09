@@ -1,16 +1,19 @@
 import React from "react";
 import Layout from "./Layout";
 import ProjectCard from "./ProjectCard";
+import ExperienceCard from "./ExperienceCard";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { getFeaturedProjects } from '../data/projects';
 
 const Home: React.FC = () => {
     const socialLinks = [
-        { icon: FiGithub, href: "https://github.com/yourusername", label: "GitHub" },
-        { icon: FiLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-        { icon: FiTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+        { icon: FiGithub, href: "https://github.com/ixshayy", label: "GitHub" },
+        { icon: FiLinkedin, href: "https://linkedin.com/in/iakshayk", label: "LinkedIn" },
+        { icon: FiTwitter, href: "https://x.com/iakxshayy/", label: "Twitter" },
+        { icon: SiLeetcode, href: "https://leetcode.com/u/iakshay/", label: "Leetcode" },
     ];
 
     const featuredProjects = getFeaturedProjects();
@@ -35,18 +38,47 @@ const Home: React.FC = () => {
 
     const experiences = [
         {
-            title: "Senior Frontend Developer",
-            company: "Company Name",
-            period: "2022 - Present",
-            description: "Led the frontend development team in building responsive web applications."
+            company: "Bricks and Pixels",
+            companyLogo: "/images/bnp.png",
+            location: "Delhi, India",
+            positions: [
+                {
+                    title: "Senior Developer",
+                    startDate: "Jan 2025",
+                    endDate: "Present",
+                    description: [
+                        "Designing and implementing scalable systems with modular architecture, enabling real-time sync, fault tolerance, and smooth data pipelines."
+                    ]
+                },
+                {
+                    title: "Junior Full Stack Developer",
+                    startDate: "Mar 2023",
+                    endDate: "Dec 2024",
+                    description: [
+                        "Built an apartment tour web app with React & Redux; improved UI and cut load time by 80%.",
+                        "Developed a real-time house manager with MERN & WebSocket.",
+                        "Created secure backend with JWT and EJS UI; boosted user engagement and data accuracy."
+                    ]
+                }
+            ]
         },
         {
-            title: "Frontend Developer",
-            company: "Previous Company",
-            period: "2020 - 2022",
-            description: "Developed and maintained multiple client-facing applications."
-        },
-        // Add more experiences as needed
+            company: "Fynd",
+            companyLogo: "/images/fynd.png",
+            location: "Mumbai, India",
+            positions: [
+                {
+                    title: "Full Stack Trainee",
+                    startDate: "September 2022",
+                    endDate: "November 2022",
+                    description: [
+                        "Built scalable APIs with Node.js for e-commerce.",
+                        "Tested endpoints using Jest.",
+                        "Collaborated closely with frontend teams to deliver seamless backend integrations."
+                    ]
+                }
+            ]
+        }
     ];
 
     return (
@@ -60,10 +92,10 @@ const Home: React.FC = () => {
                     className="flex-1"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                        Your Name
+                        Akshay Kumar
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-                        Frontend Developer & UI/UX Enthusiast
+                        Full stack Developer
                     </p>
                     <div className="flex gap-4">
                         {socialLinks.map((social, index) => {
@@ -107,9 +139,7 @@ const Home: React.FC = () => {
             >
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    I'm a passionate frontend developer with X years of experience in building modern web applications.
-                    I specialize in React, TypeScript, and modern CSS frameworks. My focus is on creating beautiful,
-                    responsive, and user-friendly interfaces that provide great user experiences.
+                    Hi, I’m Akshay Kumar — a Full Stack Developer with a knack for building scalable, efficient, and user-centric web applications. With around 2+ years of hands-on experience in the MERN stack, I specialize in crafting robust backend systems and dynamic frontends. Whether it's optimizing performance, writing clean APIs, or refining user interfaces, I bring precision and purpose to every line of code. I’m driven by a passion for clean architecture, seamless user experience, and turning ideas into impactful digital products.
                 </p>
             </motion.section>
 
@@ -146,22 +176,9 @@ const Home: React.FC = () => {
                 className="py-16"
             >
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Experience</h2>
-                <div className="space-y-8">
+                <div className="space-y-6">
                     {experiences.map((exp, index) => (
-                        <div
-                            key={index}
-                            className="bg-white dark:bg-dark-200 rounded-lg p-6 shadow-lg"
-                        >
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                                {exp.title}
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-2">
-                                {exp.company} • {exp.period}
-                            </p>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                {exp.description}
-                            </p>
-                        </div>
+                        <ExperienceCard key={index} {...exp} />
                     ))}
                 </div>
             </motion.section>

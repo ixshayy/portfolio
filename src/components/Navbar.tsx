@@ -9,20 +9,18 @@ const Navbar: React.FC = () => {
 
     const navLinks = [
         { title: "Home", path: "/" },
-        { title: "About", path: "/about" },
         { title: "Projects", path: "/projects" },
-        { title: "Notes", path: "/notes" },
     ];
 
     return (
         <nav className="fixed top-0 left-0 right-0 bg-light dark:bg-dark-100 z-50">
             <div className="max-w-3xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
+                <div className="flex justify-end items-center h-16">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-3">
+                    {/* <Link to="/" className="flex items-center space-x-3">
                         <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
                         <span className="font-mono text-xl font-semibold text-gray-900 dark:text-white">Portfolio</span>
-                    </Link>
+                    </Link> */}
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">

@@ -9,9 +9,9 @@ export default {
     extend: {
       colors: {
         dark: {
-          DEFAULT: '#1E1E1E',    // Base dark color
-          100: '#1E1E1E',        // Main background
-          200: '#2D2D2D',        // Card/hover background
+          DEFAULT: '#151515',    // Base dark color
+          100: '#151515',        // Main background
+          200: '#202022',        // Card/hover background
           300: '#404040',        // Borders and separators
           400: '#6B7280',        // Muted text
         },

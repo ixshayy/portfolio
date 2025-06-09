@@ -19,9 +19,9 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        id: "project-1",
-        title: "E-commerce Platform",
-        description: "A full-stack e-commerce platform with real-time inventory management.",
+        id: "nest-quest",
+        title: "Nest Quest",
+        description: "An intuitive platform to effortlessly discover and compare dream flats through smart filters and interactive visuals.",
         fullDescription: `
 A comprehensive e-commerce solution built with React and Node.js. Features include:
 
@@ -32,13 +32,13 @@ A comprehensive e-commerce solution built with React and Node.js. Features inclu
 - Customer reviews and ratings
 - Responsive design for all devices
         `,
-        image: "/images/project1.svg",
-        tags: ["React", "Node.js", "MongoDB"],
+        image: "/images/explorer-web.png",
+        tags: ["React", "Typescript"],
         demoLink: "https://project1.com",
         githubLink: "https://github.com/yourusername/project1",
         youtubeId: "your-youtube-video-id",
         featured: true,
-        skills: ["Frontend", "Backend", "Database"],
+        skills: ["Frontend"],
         date: "2024-03",
         highlights: [
             "Implemented real-time inventory tracking using WebSocket",
@@ -46,12 +46,7 @@ A comprehensive e-commerce solution built with React and Node.js. Features inclu
             "Integrated secure payment processing with Stripe"
         ],
         techStack: [
-            "React",
-            "Node.js",
-            "MongoDB",
-            "Express",
-            "WebSocket",
-            "Stripe API"
+            "React"
         ],
         challenges: [
             "Handling real-time inventory updates across multiple users",
